@@ -1,7 +1,17 @@
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'products', 
+    loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
+  },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
