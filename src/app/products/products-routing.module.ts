@@ -5,7 +5,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [{ path: 'index', component: ProductListComponent },
 {
-  path: 'edit/:id',
+  path: ':id',
   component: ProductDetailComponent
 },
 {path:"**", redirectTo: "index"},

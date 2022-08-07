@@ -9,6 +9,10 @@ const routes: Routes = [
     path: 'products', 
     loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
   },
+  {
+    path: 'posts', 
+    loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
+  },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

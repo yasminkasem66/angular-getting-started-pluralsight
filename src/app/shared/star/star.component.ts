@@ -8,12 +8,12 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 export class StarComponent implements OnChanges  {
 
   @Input() rating = 0;
-  cropWidth = 75;
+  cropWidth = 100;
   @Output() ratingClicked: EventEmitter<string> =
     new EventEmitter<string>();
 
   ngOnChanges(): void {
-    this.cropWidth = this.rating * 75 / 5;
+    this.cropWidth = this.rating * 100/ 5;
   }
 
   onClick(): void {

@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { StarComponent } from './star/star.component';
+import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
 
 
 @NgModule({
   declarations: [
-    StarComponent
+    StarComponent,
+    ConvertToSpacesPipe
   ],
   imports: [
     CommonModule,
@@ -18,6 +20,7 @@ import { StarComponent } from './star/star.component';
     CommonModule,
     FormsModule,
     StarComponent,
+    ConvertToSpacesPipe
   ]
 })
 export class SharedModule { }
