@@ -1,24 +1,30 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
+import { IPost } from '../models/ipost';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostsService {
-  private productUrl = 'https://jsonplaceholder.typicode.com/posts 	';
+  private prostUrl = 'https://jsonplaceholder.typicode.com/posts/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getPosts(): Observable<any[]> {
-    return this.http.get<any[]>(this.productUrl)
-      .pipe(
-        // tap(data => console.log('All: ', JSON.stringify(data))),
-        catchError(this.handleError)
-      );
+  getPosts(): Observable<IPost[]> {
+    return this.http.get<IPost[]>(this.prostUrl).pipe(
+      map((res) => res.slice(0, 5)),
+      // tap(data => console.log('All: ', JSON.stringify(data))),
+      catchError(this.handleError)
+    );
   }
 
-  
+  getPost(id: number): Observable<IPost> {
+    return this.http
+      .get<IPost>(`${this.prostUrl}${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(err: HttpErrorResponse): Observable<never> {
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console

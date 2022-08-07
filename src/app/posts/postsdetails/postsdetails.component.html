@@ -1,1 +1,13 @@
-<p>postsdetails works!</p>
+<div class="container">
+    <div class="row gx-5">
+        <div class="card mt-3 gx-3 col-5 m-auto" >
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title">{{post?.title}}</h5>
+                <p class="card-text">{{post?.body}}</p>
+                <a (click)="back()" class="btn btn-primary">back</a>
+            </div>
+        </div>
+
+    </div>
+</div>

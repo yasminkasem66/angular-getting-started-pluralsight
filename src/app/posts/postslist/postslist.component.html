@@ -1,1 +1,13 @@
-<p>postslist works!</p>
+<div class="container">
+<div class="row gx-5">
+        <div class="card mt-3 gx-3 col-4"  *ngFor="let post of posts">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.body}}</p>
+                <a [routerLink]="['/posts',post.id]" class="btn btn-primary">See Details</a>
+            </div>
+        </div>
+
+</div>
+</div>
