@@ -8,6 +8,13 @@
                 <a (click)="back()" class="btn btn-primary">back</a>
             </div>
         </div>
-
+    </div>
+    <div class="row gx-5">
+        <div class="card mt-3 gx-3 col-5 m-auto" >
+        <app-authordeails [author]="'Jasmin'" (outputEvent2)="emitVariable($event)"></app-authordeails>
+        </div>
     </div>
 </div>
+
+
+

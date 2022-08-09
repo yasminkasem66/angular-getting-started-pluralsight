@@ -30,6 +30,10 @@ export class PostsdetailsComponent implements OnInit {
     });
   }
 
+  emitVariable(event: any): void {    
+    console.log(event);
+  }
+
   back() {
     this.location.back();
   }
